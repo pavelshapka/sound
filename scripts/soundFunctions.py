@@ -1,10 +1,12 @@
-import numpy as np
+import requests
 
-def speedOfSound(temperature, h2oX, co2Max):
+ip = '192.168.212.66'
 
-    # Write your function hehe
+if (ip == ''):
+    print('Setup ip-address of Tekronix oscilloscope')
+    quit()
 
-    co2X = []
-    soundSpeed = []
-    
-    return co2X, soundSpeed
+url = 'http://' + ip + '/Image.png'
+r = requests.get(url, allow_redirects=True)
+
+open('breath.png', 'wb').write(r.content)

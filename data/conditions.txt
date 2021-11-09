@@ -1,0 +1,2 @@
+Relative humity = 26 %
+Temperature = 24.0 C
